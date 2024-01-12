@@ -15,17 +15,23 @@
     "scripts": {
         "cjs": "rollup ./src/index.js --config ./rollup.config.js",
         "dts": "rimraf -rf ./typings/ && tsc",
-        "lint": "eslint --cache --fix **/*.{js,ts}",
+        "lint": "eslint --cache --fix **/*.js",
         "build:lite": "npm run lint && npm run dts && npm run cjs",
         "build:full": "npm run build:lite && npm run test && npm pack --pack-destination ./packages/",
         "test": "vitest run --passWithNoTests",
         "test:coverage": "vitest run --passWithNoTests --coverage"
     },
+    "optionalDependencies": {
+        "ws": "^8.16.0"
+    },
     "devDependencies": {
+        "@types/node": "^20.11.0",
         "@typescript-eslint/eslint-plugin": "^6.18.1",
         "@typescript-eslint/parser": "^6.18.1",
+        "@vitest/coverage-v8": "^1.1.3",
         "eslint": "^8.56.0",
         "eslint-plugin-jsdoc": "^48.0.2",
+        "eslint-plugin-vitest": "^0.3.20",
         "rimraf": "^5.0.5",
         "rollup": "^4.9.4",
         "typescript": "^5.3.3",
