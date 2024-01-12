@@ -1,0 +1,8 @@
+# Blacklist everything except specific files/folders.
+*
+
+!dist/*
+!src/**/*.js
+!typings/**/*.d.ts
+!LICENSE
+!package.json

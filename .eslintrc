@@ -3,20 +3,41 @@
         "browser": true,
         "node": true
     },
-    "extends": [ "eslint:recommended" ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:jsdoc/recommended-typescript-flavor"
+    ],
+    "plugins": [ "@typescript-eslint", "jsdoc" ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "tsconfig.json"
     },
     "ignorePatterns": [
         "**/typings/**/*.d.ts",
         "**/*.cjs",
         "coverage/",
-        "node_modules/"
+        "node_modules/",
+        "rollup.config.js"
     ],
-    "overrides": [{
-        "files": [ "**/*.d.ts" ],
-        "rules": { "no-unused-vars": "off" }
-    }]
+    "rules": {
+        // ESLint
+        "arrow-parens": "warn",
+        "comma-dangle": [ "warn", "always-multiline" ],
+        "eol-last": "warn",
+        "indent": [ "warn", 4, { "SwitchCase": 1 } ],
+        "max-len": [ "warn", 120 ],
+        "no-console": "warn",
+        "no-case-declarations": "off",
+        "object-curly-spacing": [ "warn", "always" ],
+        "quotes": [ "warn", "double" ],
+        "quote-props": [ "warn", "consistent" ],
+        "require-jsdoc": "warn",
+        "semi": "error",
+
+        // JSDoc
+        "jsdoc/no-undefined-types": "error"
+    }
 }

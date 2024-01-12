@@ -1,11 +1,11 @@
 # IDE Folders
-.idea
-.vscode
+.idea/
+.vscode/
 
 # Project
-node_modules
-packages
-build
-typings
+node_modules/
+packages/
+dist/
+typings/
 
 .eslintcache
