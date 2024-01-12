@@ -1,7 +1,7 @@
 {
     "name": "archipelago.js",
     "version": "2.0.0_dev",
-    "description": "A JavaScript library for communicating with the Archipelago MultiServer.",
+    "description": "A promise-based JavaScript library for communicating with an Archipelago MultiServer.",
     "author": "Zach Parks <zach@alliware.com>",
     "license": "MIT",
     "type": "module",
@@ -16,8 +16,8 @@
         "cjs": "rollup ./src/index.js --config ./rollup.config.js",
         "dts": "rimraf -rf ./typings/ && tsc",
         "lint": "eslint --cache --fix **/*.{js,ts}",
-        "build:lite": "pnpm lint && pnpm dts && pnpm cjs",
-        "build:full": "pnpm lint && pnpm test && pnpm dts && pnpm cjs && pnpm pack --pack-destination ./packages/",
+        "build:lite": "npm run lint && npm run dts && npm run cjs",
+        "build:full": "npm run build:lite && npm run test && npm pack --pack-destination ./packages/",
         "test": "vitest run --passWithNoTests",
         "test:coverage": "vitest run --passWithNoTests --coverage"
     },
