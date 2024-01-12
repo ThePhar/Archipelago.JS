@@ -1,0 +1,32 @@
+{
+    "name": "archipelago.js",
+    "version": "2.0.0_dev",
+    "description": "A JavaScript library for communicating with the Archipelago MultiServer.",
+    "author": "Zach Parks <zach@alliware.com>",
+    "license": "MIT",
+    "type": "module",
+    "main": "./src/index.js",
+    "types": "./typings/index.d.ts",
+    "homepage": "https://github.com/ThePhar/archipelago.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ThePhar/archipelago.js.git"
+    },
+    "scripts": {
+        "cjs": "rollup ./src/index.js --config ./rollup.config.js",
+        "dts": "rimraf -rf ./typings/ && tsc",
+        "lint": "eslint --cache --fix **/*.{js,json}",
+        "build:lite": "pnpm lint && pnpm dts && pnpm cjs",
+        "build:full": "pnpm lint && pnpm test && pnpm dts && pnpm cjs && pnpm pack --pack-destination ./packages/",
+        "test": "vitest run --passWithNoTests",
+        "test:coverage": "vitest run --passWithNoTests --coverage"
+    },
+    "devDependencies": {
+        "@typescript-eslint/parser": "^6.18.1",
+        "eslint": "^8.56.0",
+        "rimraf": "^5.0.5",
+        "rollup": "^4.9.4",
+        "typescript": "^5.3.3",
+        "vitest": "^1.1.3"
+    }
+}

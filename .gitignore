@@ -1,0 +1,12 @@
+# IDE Folders
+.idea
+.vscode
+
+
+# Project
+node_modules
+packages
+build
+typings
+
+.eslintcache
