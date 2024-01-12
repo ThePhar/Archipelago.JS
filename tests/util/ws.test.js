@@ -1,4 +1,4 @@
-import { fetchWebSocket } from "../../src/index.js";
+import { fetchWebSocket } from "../../src/util/ws.js";
 
 test("do not throw an error if global WebSocket is defined.", async () => {
     /** @type {WebSocket} Stub */
